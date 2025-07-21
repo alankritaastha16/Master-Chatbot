@@ -1,47 +1,81 @@
-# KG-Chatbot (Local RDF/SPARQL Chatbot)
+# KG-Chatbot Federated
 
-This project is a simple chatbot that allows users to upload RDF/Turtle files and ask natural language questions that are answered using SPARQL queries on an in-memory RDF graph.
+This is a modular chatbot framework that supports federated querying over multiple data sources such as RDF files, MongoDB, and external APIs.
 
-## Features
+## 🚀 Features
 
-- 📁 Upload your own `.ttl` or `.rdf` file
-- 💬 Ask natural language questions like “Which vehicles have faulty engines?”
-- 🧠 Uses pattern-matched or LLM-based SPARQL generation
-- 🗃 Powered entirely by Python (`rdflib`, `flask`) — no external triple store required
+- 🧩 Plug-in based connector system (`BaseConnector`)
+- 🔀 Smart router that dispatches questions to the correct backend(s)
+- 📡 Support for RDF (via SPARQL) and MongoDB (via PyMongo)
+- 🌐 Simple Web UI for chat interaction
+- 📁 Easily extensible to REST APIs, SQL, GraphDBs, etc.
 
-## Quickstart
+---
 
-### 🧰 Requirements
+## 📁 Project Structure
+
+```
+kg-chatbot-federated/
+├── app.py
+├── connector_loader.py
+├── connectors/
+│   ├── base.py
+│   ├── mongo_connector.py
+│   └── rdf_connector.py
+├── router.py
+├── sample_data.ttl
+├── static/
+│   └── index.html
+├── uploads/
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## 🔧 Connectors
+
+To add a new data source:
+
+1. Create a new class in `connectors/` that extends `BaseConnector`.
+2. Implement:
+   - `can_answer(question)`
+   - `generate_query(question)`
+   - `execute_query(query)`
+
+3. It will be auto-discovered and loaded at runtime.
+
+---
+
+## ⚙️ How to Run
+
+### 🧰 Prerequisites
 
 - Python 3.7+
-- Pip
+- MongoDB running locally (if testing Mongo connector)
 
-### 🚀 Run Locally
+### ▶️ Start the App
 
 ```bash
-git clone <repo>
-cd kg-chatbot
-python -m venv venv
-venv\Scripts\activate  # Windows
 pip install -r requirements.txt
 python app.py
 ```
 
-Then open [http://localhost:5000](http://localhost:5000) in your browser.
-
-### 📂 Files
-
-- `graph_handler.py`: Loads & queries RDF files
-- `app.py`: Flask backend
-- `static/index.html`: Chatbot UI + upload form
-- `uploads/`: Where uploaded files are stored
-- `sample_data.ttl`: Sample RDF to get started
-
-## 📌 To Do
-
-- [ ] Add GPT-based SPARQL generation
-- [ ] Answer refinement with templates
-- [ ] Session memory
+Visit [http://localhost:5000](http://localhost:5000)
 
 ---
-Made with ❤️ for local KG exploration.
+
+## 📌 Example Questions
+
+- "Which vehicles have faulty engines?" → answered from RDF
+- "Show me service history" → answered from MongoDB
+
+## 🧠 Planned Extensions
+
+- OpenAI/GPT-based dynamic SPARQL/SQL generator
+- Chat history + session context
+- Knowledge unification across source types
+
+---
+
+Enjoy building your federated KG chatbot!

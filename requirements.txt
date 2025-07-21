@@ -1,3 +1,4 @@
 flask
 rdflib
 pymongo
+python-dotenv

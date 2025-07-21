@@ -22,4 +22,16 @@ class RDFConnector(BaseConnector):
 
     def execute_query(self, query: str) -> list:
         results = self.graph.query(query)
-        return [str(row['car'].split('#')[-1]) for row in results]
+        var_names = results.vars
+        output = []
+        for row in results:
+            # Try to get 'car' if present, else use the first variable
+            value = None
+            if 'car' in var_names:
+                idx = var_names.index('car')
+                value = row[idx]
+            else:
+                value = row[0] if len(row) > 0 else None
+            if value:
+                output.append(str(value).split('#')[-1])
+        return output
