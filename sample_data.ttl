@@ -1,0 +1,8 @@
+@prefix : <http://example.org#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:Car1 a :Vehicle ; :hasComponent :Engine1 ; :manufactureYear "2021"^^xsd:gYear .
+:Car2 a :Vehicle ; :hasComponent :Engine2 ; :manufactureYear "2022"^^xsd:gYear .
+
+:Engine1 a :Component ; :isFaulty true .
+:Engine2 a :Component ; :isFaulty false .

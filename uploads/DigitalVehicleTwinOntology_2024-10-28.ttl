@@ -1,0 +1,3363 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://graph.bmwgroup.net/Ontology/Part/SerializedPartShape> a sh:NodeShape;
+  sh:property [
+      sh:class <https://graph.bmwgroup.net/Ontology/Common/Component>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/isBasedOn>
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PartsUsage>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/uses>
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/Part/SerializedPart> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PartsUsage> a
+    owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Usage>;
+  rdfs:label "Parts Usage";
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Parts Usage"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/uses> a owl:ObjectProperty;
+  rdfs:label "uses"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "uses"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/callOffType> a
+    owl:DatatypeProperty;
+  rdfs:label "Call Off Type"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Call Off Type"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Vehicle> a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/Vehicle/Vehicle>, <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Product>,
+    <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/DigitalProductTwin>;
+  rdfs:label "Digital Vehicle Twin"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Digital Vehicle Twin"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/isAssignedTo>
+  a owl:ObjectProperty;
+  rdfs:label "is assigned to"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "is assigned to"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/callOffNumber>
+  a owl:DatatypeProperty;
+  rdfs:label "Call Off Number"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Call Off Number"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/callOffCreationTimestamp>
+  a owl:DatatypeProperty;
+  rdfs:label "Call Off Creation Timestamp"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Call Off Creation Timestamp"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ComponentType>
+  a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/Common/Component>, <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Product>;
+  rdfs:label "Component Type"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Component Type"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/includes> a owl:ObjectProperty;
+  rdfs:label "includes"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "includes"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PartVersionMaster>
+  a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/MasterData>;
+  rdfs:label "Part Version Master"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Part Version Master"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Order> a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/DVFThing>;
+  rdfs:label "Order"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Order"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/callOffVersion>
+  a owl:DatatypeProperty;
+  rdfs:label "Call Off Version"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Call Off Version"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ElectrolyteComposition>
+  a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SubstanceComposition>;
+  rdfs:label "Electrolyte Composition"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Electrolyte Composition"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/references> a
+    owl:ObjectProperty;
+  rdfs:label "references"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "references"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/CathodeComposition>
+  a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SubstanceComposition>;
+  rdfs:label "Cathode Composition"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Cathode Composition"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/AnodeComposition>
+  a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SubstanceComposition>;
+  rdfs:label "Anode Composition"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Anode Composition"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/subjectSerialNumber>
+  a owl:DatatypeProperty;
+  rdfs:label "Subject Serial Number"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Subject Serial Number"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/certificateSigningRequest>
+  a owl:DatatypeProperty;
+  rdfs:label "Certificate Signing Request"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Certificate Signing Request"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/subjectCommonName>
+  a owl:DatatypeProperty;
+  rdfs:label "Subject Common Name"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Subject Common Name"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/subjectLocality>
+  a owl:DatatypeProperty;
+  rdfs:label "Subject Locality"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Subject Locality"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialPart> a
+    owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/Part/SerializedPart>, <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/DigitalProductTwin>;
+  rdfs:label "Digital Serialized Part Twin"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Digital Serialized Part Twin"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/confirms> a owl:ObjectProperty;
+  rdfs:label "confirms"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "confirms"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/DVFThing> a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/Upper/Thing>;
+  rdfs:label "Digital Twin Thing"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Digital Twin Thing"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/changes> a owl:ObjectProperty;
+  rdfs:label "changes"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "changes"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/LifeCyclePhase>
+  a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/DVFThing>;
+  rdfs:label "Life Cycle Phase";
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Life Cycle Phase"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Usage> a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/DVFThing>;
+  rdfs:label "Usage"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Usage"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Token> a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/DVFThing>;
+  rdfs:label "Token"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Token"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/activates> a owl:ObjectProperty;
+  rdfs:label "activates"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "activates"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/superordinate>
+  a owl:DatatypeProperty;
+  rdfs:label "Superordinate"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Superordinate"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/hCode> a owl:DatatypeProperty;
+  rdfs:label "hCode"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "hCode"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/hCalssification>
+  a owl:DatatypeProperty;
+  rdfs:label "hCalssification"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "hCalssification"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/HazardousSubstances>
+  a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SubstanceData>;
+  rdfs:label "Hazardous Substances"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Hazardous Substances"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/CriticalRawSubstance>
+  a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SubstanceData>;
+  rdfs:label "Critical Raw Substance"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Critical Raw Substance"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/featureCategory>
+  a owl:DatatypeProperty;
+  rdfs:label "Feature Category"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Feature Category"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/featureKey> a
+    owl:DatatypeProperty;
+  rdfs:label "Feature Key"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Feature Key"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Product> a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/DVFThing>;
+  rdfs:label "Product"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Product"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Plant> a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/MasterData>;
+  rdfs:label "Plant";
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Plant"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/orderStatus> a
+    owl:DatatypeProperty;
+  rdfs:label "Order Status"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Order Status"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/pipelineOrderId>
+  a owl:DatatypeProperty;
+  rdfs:label "Pipeline Order Id"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Pipeline Order Id"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/orders> a owl:ObjectProperty;
+  rdfs:label "orders"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "orders"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ManufacturingFeature>
+  a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/DVFThing>;
+  rdfs:label "Manufacturing Feature"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Manufacturing Feature"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/planningCountry>
+  a owl:DatatypeProperty;
+  rdfs:label "Planning Country"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Planning Country"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/masterDataPak>
+  a owl:DatatypeProperty;
+  rdfs:label "Master Data Pak"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Master Data Pak"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/bodyInWhiteDispositionFlag>
+  a owl:DatatypeProperty;
+  rdfs:label "Body In White Disposition Flag"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Body In White Disposition Flag"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/productionPhase>
+  a owl:DatatypeProperty;
+  rdfs:label "Production Phase"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Production Phase"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/vinAssignmentWeek>
+  a owl:DatatypeProperty;
+  rdfs:label "Vin Assignment Week"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Vin Assignment Week"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/supplyGroup> a
+    owl:DatatypeProperty;
+  rdfs:label "Supply Group"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Supply Group"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/partFamiliyValidFrom>
+  a owl:DatatypeProperty;
+  rdfs:label "Part Familiy Valid From"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Part Familiy Valid From"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/partFamiliyName>
+  a owl:DatatypeProperty;
+  rdfs:label "Part Familiy Name"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Part Familiy Name"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/supplyGroupVersion>
+  a owl:DatatypeProperty;
+  rdfs:label "Supply Group Version"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Supply Group Version"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/hasVersion> a
+    owl:ObjectProperty;
+  rdfs:label "has version"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "has version"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/materialType>
+  a owl:DatatypeProperty;
+  rdfs:label "Material Type"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Material Type"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/StructuralLevel>
+  a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Usage>,
+    <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/MasterData>;
+  rdfs:label "Structural Usage"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Structural Usage"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/structuredBy>
+  a owl:ObjectProperty;
+  rdfs:label "structured by"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "structured by"@e .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/expandedBy> a
+    owl:ObjectProperty;
+  rdfs:label "expanded by"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "expanded by"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/VehicleProductionStep>
+  a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ProductionProcess>;
+  rdfs:label "Vehicle Production Step Usage"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Vehicle Production Step Usage"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/isConsumedDuring>
+  a owl:ObjectProperty;
+  rdfs:label "is consumed during"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "is consumed during"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/supplierCountAddress>
+  a owl:DatatypeProperty;
+  rdfs:label "Supplier Count Address"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Supplier Count Address"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/UpgMaster> a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Usage>,
+    <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/MasterData>;
+  rdfs:label "Upg Usage"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Upg Usage"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PartFamily> a
+    owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Usage>;
+  rdfs:label "Part Family Usage"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Part Family Usage"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/supplierAssemblyLine>
+  a owl:DatatypeProperty;
+  rdfs:label "Supplier Assembly Line"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Supplier Assembly Line"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/dispoCode> a owl:DatatypeProperty;
+  rdfs:label "Dispo Code"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Dispo Code"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/VehiclePlantMaster>
+  a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/Plant/Plant>, <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Plant>;
+  rdfs:label "Vehicle Plant Master";
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Vehicle Plant Master"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/salapaBools> a
+    owl:DatatypeProperty;
+  rdfs:label "Salapa Bools"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Salapa Bools"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ConsumptionCheckpoint>
+  a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ProductionProcess>;
+  rdfs:label "Consumption Checkpoint";
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Consumption Checkpoint"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PartMaster> a
+    owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/Part/Part>, <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/MasterData>;
+  rdfs:label "Part Master"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Part Master"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PpgMaster> a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Usage>,
+    <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/MasterData>;
+  rdfs:label "Ppg Usage"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Ppg Master"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/dispoRelevance>
+  a owl:DatatypeProperty;
+  rdfs:label "Dispo Relevance"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Dispo Relevance"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/procurementType>
+  a owl:DatatypeProperty;
+  rdfs:label "Procurement Type"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Procurement Type"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/specialProcurement>
+  a owl:DatatypeProperty;
+  rdfs:label "Special Procurement"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Special Procurement"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/lowLevelCode>
+  a owl:DatatypeProperty;
+  rdfs:label "Low Level Code"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Low Level Code"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/productionVersion>
+  a owl:DatatypeProperty;
+  rdfs:label "Production Version"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Production Version"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/plantMaterialStatus>
+  a owl:DatatypeProperty;
+  rdfs:label "Plant Material Status"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Plant Material Status"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ppg> a owl:DatatypeProperty;
+  rdfs:label "Ppg"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Ppg"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/consistsOf> a
+    owl:ObjectProperty;
+  rdfs:label "consists of"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "consists of"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Measurement> a
+    owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/DVFThing>;
+  rdfs:label "Measurement"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Measurement"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/measures> a owl:ObjectProperty;
+  rdfs:label "measures"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "measures"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/CertificateSigningRequest>
+  a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/DVFThing>;
+  rdfs:label "Certificate Signing Request"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Certificate Signing Request"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/signedBy> a owl:ObjectProperty;
+  rdfs:label "signed by"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "signed by"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Software> a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/Common/Software>, <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/DVFThing>;
+  rdfs:label "Software"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Software"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/hasInstalled> a owl:ObjectProperty;
+  rdfs:label "has installed"@enj;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "has installed"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/EcuFeature> a
+    owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Feature>;
+  rdfs:label "Ecu Feature";
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Ecu Feature"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/hasActive> a owl:ObjectProperty;
+  rdfs:label "has active"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "has active"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ElectrialMeasurement>
+  a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Measurement>;
+  rdfs:label "Electrial Measurement"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Electric Measurement"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ComponentInspection>
+  a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/Inspection>;
+  rdfs:label "Component Inspection"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Component Inspection"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/inspectionStation>
+  a owl:DatatypeProperty;
+  rdfs:label "Inspection Station"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Inspection Station"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/isBasedOn> a owl:ObjectProperty;
+  rdfs:label "is based on"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "is based on"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/VehicleFeature>
+  a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Feature>;
+  rdfs:label "Vehicle Feature"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Vehicle Feature"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/structuralLevel>
+  a owl:DatatypeProperty;
+  rdfs:label "Structural Level"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Structural Level"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/casNumber> a owl:DatatypeProperty;
+  rdfs:label "Cas Number"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Cas Number"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/nodeId> a owl:DatatypeProperty;
+  rdfs:label "Node Id"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Node Id"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/upg> a owl:DatatypeProperty;
+  rdfs:label "Upg"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Upg"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/MasterData> a
+    owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/Common/MasterData>, <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/DVFThing>;
+  rdfs:label "Digital Twin Master Data"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Digital Twin Master Data"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/VehicleType> a
+    owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Product>;
+  rdfs:label "Vehicle Type"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Vehicle Type"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/VehicleInspection>
+  a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/Inspection>;
+  rdfs:label "Vehicle Inspection"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Vehicle Inspection"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SubstanceComposition>
+  a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SubstanceData>;
+  rdfs:label "Substance Composition"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Substance Composition"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/substacneWeight>
+  a owl:ObjectProperty;
+  rdfs:label "substacne weight"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "substacne weight"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0> a owl:Ontology;
+  rdfs:label "Digital Vehicle Twin"@en;
+  owl:imports <https://graph.bmwgroup.net/Ontology/Engine-1.0>, <https://graph.bmwgroup.net/Ontology/Battery-1.0>,
+    <https://graph.bmwgroup.net/Ontology/BillOfMaterial-1.0>, <https://graph.bmwgroup.net/Ontology/CallOff-1.0>,
+    <https://graph.bmwgroup.net/Ontology/ElectricMotor-1.0>, <https://graph.bmwgroup.net/Ontology/MagicDrawImports/QualityOrder-0.9>,
+    <https://graph.bmwgroup.net/Ontology/Vehicle-2.0>, <https://graph.bmwgroup.net/Ontology/VehicleInformation-2.0>,
+    <https://graph.bmwgroup.net/Ontology/Part-2.0>;
+  owl:versionInfo "1.0";
+  <http://www.linkedmodel.org/1.2/schema/vaem#namespace> <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/>;
+  dct:title "Digital Vehicle Twin Ontology";
+  dct:created "2024-07-11T14:22:19.639Z"^^xsd:dateTime;
+  <https://graph.bmwgroup.net/Ontology/Common/hasStatus> <https://graph.bmwgroup.net/Data/9f482531-a1a9-4525-854d-c556b5d9687b>;
+  <https://graph.bmwgroup.net/Ontology/BusinessObject/hasOntologyType> <https://graph.bmwgroup.net/Data/26b26513-939b-4140-af7b-dc1ba8ab62a4> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ActualMass> a
+    owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/DVFThing>;
+  rdfs:label "Actual Mass"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Actual Mass"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ActualMassShape>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/unit>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/value>;
+      sh:datatype xsd:decimal
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ActualMass> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/AndroidAppMaster>
+  a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Software>;
+  rdfs:label "Android Application"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Android Application"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/AndroidAppMasterShape>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/appVersion>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/appDescription>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/appID>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/AndroidAppMaster> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/CalculatedWeightSal>
+  a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/DVFThing>;
+  rdfs:label "Calculated Weight Sal"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Calculated Weight Sal"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/CalculatedWeightSalShape>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/value>;
+      sh:datatype xsd:decimal
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/unit>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/CalculatedWeightSal> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/CallOff> a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/DVFThing>;
+  rdfs:label "Call Off"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Call Off"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/CallOffShape>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/callOffType>;
+      sh:datatype xsd:string
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Vehicle>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/isAssignedTo>
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/callOffNumber>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/callOffCreationTimestamp>;
+      sh:datatype xsd:string
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ComponentType>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/includes>
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PartVersionMaster>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/includes>
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Order>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/isAssignedTo>
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/callOffVersion>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/CallOff> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/CertificateSigningRequestShape>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/subjectSerialNumber>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/certificateSigningRequest>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/subjectCommonName>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/subjectLocality>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/CertificateSigningRequest> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Event> a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/DVFThing>;
+  rdfs:label "Event"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Event"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ComponentInspectionShape>
+  a sh:NodeShape;
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ComponentInspection> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ComponentInspectionShapeAssociation>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/plantId>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/qualityOrderId>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/inspectionTimestamp>;
+      sh:datatype xsd:timestamp
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/fullBarcode>;
+      sh:datatype xsd:string
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialPart>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/inspects>
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/changeIndex>;
+      sh:datatype xsd:integer
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/MagicDrawImports/QualityOrder/QualityOrder>;
+      sh:path <https://graph.bmwgroup.net/Ontology/Common/isSameAs>
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialPart>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/confirms>
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/partNumber>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/serialNumber>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/componentProductionStep>;
+      sh:datatype xsd:string
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PartsUsage>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/confirms>
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ComponentInspection> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ComponentTypeShape>
+  a sh:NodeShape;
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ComponentType> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ComponentTypeShapeAssociation>
+  a sh:NodeShape;
+  sh:property [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PartsUsage>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/uses>
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/partNumber>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/changeIndex>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ComponentType> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ProductionProcess>
+  a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/MasterData>;
+  rdfs:label "Production Process"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Production Process"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ConsumptionCheckpointShape>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/consumptionCheckPoint>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ConsumptionCheckpoint> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SubstanceData>
+  a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/DVFThing>;
+  rdfs:label "Substance Data"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Substance Data"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/DVFThingShape>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/validUntil>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/dataCreationTimestamp>;
+      sh:datatype xsd:timestamp
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/validFrom>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/DVFThing> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Feature> a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/DVFThing>;
+  rdfs:label "Feature"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Feature"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/EcuFeatureShape>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/EcuvalidityConditions>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/EcuFeature> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/EcuStatus> a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Status>;
+  rdfs:label "Ecu Status"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Ecu Status"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Status> a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/Common/Status>, <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/DVFThing>;
+  rdfs:label "Status"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Status"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/EcuStatusShape>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/status>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/EcuStatus> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ElectrialMeasurementShape>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/resistance>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/voltage>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/timestamp>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/measurementUId>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/inductivity>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ElectrialMeasurement> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/EventShape> a
+    sh:NodeShape;
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Event> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/EventShapeAssociation>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/uId>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/eventTimestamp>;
+      sh:datatype xsd:timestamp
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/DVFThing>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/changes>
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/LifeCyclePhase>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/occuresDuring>
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Usage>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/changes>
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Event> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/FeatureShape>
+  a sh:NodeShape;
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Feature> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/FeatureShapeAssociation>
+  a sh:NodeShape;
+  sh:property [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Token>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/activates>
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/featureRedeliverStatus>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/AndroidAppMaster/appID>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/featureSubId>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/tokenIdEcuUid>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/tokenCreationTimestamp>;
+      sh:datatype xsd:timestamp
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/orderer>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/featureId>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/installedSuccess>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/diagnosticAddress>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/linkToIdType>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/tokenId>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/enableType>;
+      sh:datatype xsd:integer
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/featureSpecificFields>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Feature> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/HazardousSubstancesShape>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/superordinate>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/hCode>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/hCalssification>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/HazardousSubstances> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/HighVoltageBatteryMaser>
+  a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PartVersionMaster>;
+  rdfs:label "High Voltage Battery Master"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "High Voltage Battery Master"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/HighVoltageBatteryMaserShape>
+  a sh:NodeShape;
+  sh:property [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/CathodeComposition>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/references>
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/AnodeComposition>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/references>
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ElectrolyteComposition>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/references>
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/HazardousSubstances>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/references>
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/CriticalRawSubstance>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/references>
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/HighVoltageBatteryMaser> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/LifeCyclePhaseShapeAssociation>
+  a sh:NodeShape;
+  sh:property [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/DVFThing>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/isIn>
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/LifeCyclePhase> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ManufacturingFeatureShape>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/featureCategory>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/featureKey>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ManufacturingFeature> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/MasterDataShapeAssociation>
+  a sh:NodeShape;
+  sh:property [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Usage>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/references>
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Product>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/references>
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/MasterData> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/MeasurementShapeAssociation>
+  a sh:NodeShape;
+  sh:property [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Plant>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/takesPlaceIn>
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Measurement> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/OrderShapeAssociation>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/orderStatus>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/pipelineOrderId>;
+      sh:datatype xsd:string
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Vehicle>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/orders>
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ManufacturingFeature>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/includes>
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/planningCountry>;
+      sh:datatype xsd:string
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Product>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/orders>
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/masterDataPak>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/oderNumber>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/bodyInWhiteDispositionFlag>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/productionPhase>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/vinAssignmentWeek>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Order> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PartFamilyShape>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/supplyGroup>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/partFamiliyValidFrom>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/partFamiliyName>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/supplyGroupVersion>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PartFamily> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PartMasterShape>
+  a sh:NodeShape;
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PartMaster> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PartMasterShapeAssociation>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/unitOfQuantity>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/recyclingClass>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/partsOrigin>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/transmissionCodeReferenceCode>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/sparePartCode>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/shortName>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/partNumberDepartment>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/hvsDmcRelevance>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/dangerousGoodsMarking>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/inhouseComponent>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/partNumberStatus>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/hwSwCode>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/paintType>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/drawingIndex>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/commentLanguageDependent>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/partNumberClass>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/salChangeIndex>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/partDescription>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/characterCode>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/rhLhIdentifier>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/partNumberType>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/weight>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/sourcingType>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/hvsDmcBatteryCode>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/standardPartJitCode>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/pnAssignmentToGeneric>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/lMarking>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/standardDescriptionId>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/btrv>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/productionProcess>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/partType>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/jitCode>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/numberOfMaterialType>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/salPartNumber>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/componentGroupCode>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/hvsDmcChargingParameter>;
+      sh:datatype xsd:string
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PartVersionMaster>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/hasVersion>
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/hvsDmcSpecificationCode>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/drawingFormat>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/partCode>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/predecessorPartNumber>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/partGroup>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/partNumber>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/initialUseModel>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PartMaster> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PartVersionCentralDataMaster>
+  a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PartVersionMaster>;
+  rdfs:label "Part Version Central Data Master"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Part Version Central Data Master"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PartVersionCentralDataMasterShape>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/materialType>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PartVersionCentralDataMaster> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PartVersionMasterShape>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/pseudoChangeIndex>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/numberOfMaterialType>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/salPartNumber>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/unitOfQuantity>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/sapChangeNumber>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/drawingIndex>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/partDescription>;
+      sh:datatype xsd:string
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PartMaster>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/references>
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/weight>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/partGroup>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/salPartDescription>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/salChangeIndex>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PartVersionMaster> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PartsUsageShape>
+  a sh:NodeShape;
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PartsUsage> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PartsUsageShapeAssociation>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/componentId>;
+      sh:datatype xsd:string
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/StructuralLevel>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/structuredBy>
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/Expansion>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/expandedBy>
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/VehicleProductionStep>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/isConsumedDuring>
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/partNumber>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/supplierCountAddress>;
+      sh:datatype xsd:string
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/Common/Component>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/expandedBy>
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Vehicle>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/isUsedIn>
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/supplier>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/supplierNumber>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/label>;
+      sh:datatype xsd:string
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/UpgMaster>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/structuredBy>
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/changeIndex>;
+      sh:datatype xsd:integer
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PartFamily>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/structuredBy>
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/supplierAssemblyLine>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/dispoCode>;
+      sh:datatype xsd:string
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/VehiclePlantMaster>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/isAssembledIn>
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PartVersionMaster>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/references>
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/salapaBools>;
+      sh:datatype xsd:string
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ConsumptionCheckpoint>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/isConsumedDuring>
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PpgMaster>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/structuredBy>
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/dispoRelevance>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PartsUsage> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PlantSpecificPartVersionMaster>
+  a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PartVersionCentralDataMaster>;
+  rdfs:label "Plant Specific Part Version Master"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Plant Specific Part Version Master"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PlantSpecificPartVersionMasterShape>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/procurementType>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/specialProcurement>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/lowLevelCode>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/productionVersion>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/plantMaterialStatus>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/selectionTable>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PlantSpecificPartVersionMaster> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PpgMasterShape>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ppg>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PpgMaster> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ProductShapeAssociation>
+  a sh:NodeShape;
+  sh:property [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/LifeCyclePhase>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/isIn>
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Product>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/consistsOf>
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Measurement>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/measures>
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Usage>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/uses>
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Product> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/QuantityRelationShape>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/quantity>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/QuantityRelation> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialEcu> a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialPart>;
+  rdfs:label "Serial Ecu"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Serial Ecu"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialEcuShape>
+  a sh:NodeShape;
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialEcu> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialEcuShapeAssociation>
+  a sh:NodeShape;
+  sh:property [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/CertificateSigningRequest>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/signedBy>
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/buildTimezone>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/statusResponsible>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/status>;
+      sh:datatype xsd:string
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Feature>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/hasActive>
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/supplierSerialNumber>;
+      sh:datatype xsd:string
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Software>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/hasInstalled>
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ecuId>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/uIdSerialNumber>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/encodedKdsPublicKey>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/buildDate>;
+      sh:datatype xsd:date
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/uIdPrefix>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialEcu> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialEngine>
+  a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/Engine/Engine>, <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialPart>;
+  rdfs:label "Serial Engine"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Serial Engine"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialEngineShape>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/vehicleAssignementTimestamp>;
+      sh:datatype xsd:timestamp
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/engineModel>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/enginePosition>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialEngine> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialGearbox>
+  a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialPart>;
+  rdfs:label "Serial Gearbox"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Serial Gearbox"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialGearboxShape>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/gearboxNumber>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/vehicleAssignementTimestamp>;
+      sh:datatype xsd:timestamp
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialGearbox> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialHvb> a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/Battery/Battery>, <https://graph.bmwgroup.net/Ontology/Part/SerializedPart>,
+    <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialPart>;
+  rdfs:label "Serial Hvb"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Serial Hvb"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialHvbCell>
+  a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/Battery/BatteryCell>, <https://graph.bmwgroup.net/Ontology/Part/SerializedPart>,
+    <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialPart>;
+  rdfs:label "Serial Hvb Cell"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Serial Hvb Cell"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialHvbCellShape>
+  a sh:NodeShape;
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialHvbCell> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialHvbCellShapeAssociation>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/cellId>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/gbtCode>;
+      sh:datatype xsd:string
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ElectrialMeasurement>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/measures>
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialHvbCell> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialHvbLogicalCell>
+  a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/Part/SerializedPart>, <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialPart>;
+  rdfs:label "Serial Hvb Logical Cell"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Serial Hvb Logical Cell"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialHvbLogicalCellShape>
+  a sh:NodeShape;
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialHvbLogicalCell> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialHvbLogicalCellShapeAssociation>
+  a sh:NodeShape;
+  sh:property [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ElectrialMeasurement>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/measures>
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/hvbUId>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/logicalCellId>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialHvbLogicalCell> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialHvbModule>
+  a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/Battery/BatteryModule>, <https://graph.bmwgroup.net/Ontology/Part/SerializedPart>,
+    <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialPart>;
+  rdfs:label "Serial Hvb Module"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Serial Hvb Module"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialHvbModuleShape>
+  a sh:NodeShape;
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialHvbModule> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialHvbModuleShapeAssociation>
+  a sh:NodeShape;
+  sh:property [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ElectrialMeasurement>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/measures>
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/moduleId>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/gbtCode>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialHvbModule> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialHvbShape>
+  a sh:NodeShape;
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialHvb> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialHvbShapeAssociation>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/voltage>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/capacityMean>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/capacityFade>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/energyThroughput>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/numberOfChargings>;
+      sh:datatype xsd:string
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ElectrialMeasurement>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/measures>
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/capacityThroughput>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/hvbUId>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/capacityAgingMin>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/capacityMin>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/numberOfFullChargings>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/capacityAgingMean>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialHvb> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialPartShape>
+  a sh:NodeShape;
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialPart> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialPartShapeAssociation>
+  a sh:NodeShape;
+  sh:property [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/VehiclePlantMaster>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/assembledIn>
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/builtTimestamp>;
+      sh:datatype xsd:timestamp
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/plantId>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/inspectionStation>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/supplierId>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/supplierName>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialPart> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialPartStatus>
+  a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Status>;
+  rdfs:label "Serial Part Status"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Serial Part Status"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialPartStatusShape>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/status>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialPartStatus> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SfaToken> a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Token>;
+  rdfs:label "Sfa Token"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Sfa Token"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SfaTokenShape>
+  a sh:NodeShape;
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SfaToken> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SfaTokenShapeAssociation>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/EcuvalidityConditions>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/linkToIdEcu>;
+      sh:datatype xsd:string
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Feature>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/activates>
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/version>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/diagnosticAddress>;
+      sh:datatype xsd:integer
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/signatureType>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/certificateSerialNumber>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/featureSpecificFields>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/tokenCreationTimestamp>;
+      sh:datatype xsd:timestamp
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/featureRedeliverStatus>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/featureSubId>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/tokenId>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/linkToIdType>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/enableType>;
+      sh:datatype xsd:integer
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/orderer>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/featureId>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/installedSuccess>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/signature>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/commonNameOfCertificate>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SfaToken> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/StructuralLevelShape>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/structuralLevel>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/StructuralLevel> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Structure> a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/MasterData>;
+  rdfs:label "Structure"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Structure"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/StructureShape>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/description>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/uId>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Structure> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SubstanceCompositionShape>
+  a sh:NodeShape;
+  sh:property [
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SubstanceComposition> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SubstanceDataShape>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/casNumber>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/substanceName>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/nodeId>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SubstanceData> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/TechnicalUnitMaster>
+  a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Software>;
+  rdfs:label "Technical Unit Master"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Technical Unit Master"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/TechnicalUnitMasterShape>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/processClassText>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/mainVersion>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/subVersion>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/sgbmId>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/sgbdVar>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/serialNumber>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/patchVersion>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/sgbdIndex>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/processClassValue>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/TechnicalUnitMaster> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/UpgMasterShape>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/upg>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/UpgMaster> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/UsageShape> a
+    sh:NodeShape;
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Usage> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/UsageShapeAssociation>
+  a sh:NodeShape;
+  sh:property [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/MasterData>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/isAssembledIn>
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Product>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/expandedBy>
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/quantity>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Usage> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/VariantInformation>
+  a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/DVFThing>;
+  rdfs:label "Variant Information"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Variant Information"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/VariantInformationShapeAssociation>
+  a sh:NodeShape;
+  sh:property [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Usage>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/describes>
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/VariantInformation> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/VehicleFeatureShape>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/billingData>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/lastBillingExportObject>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/VehicleFeature> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/VehicleInspectionShape>
+  a sh:NodeShape;
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/VehicleInspection> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/VehicleInspectionShapeAssociation>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/inspectionStatusNumber>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/partNumber>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ipsQDocumentationId>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/plantId>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/changeIndex>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/inspectionTimestamp>;
+      sh:datatype xsd:timestamp
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/installationTaktNumber>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/fullBarcode>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/inspectionResultRemark>;
+      sh:datatype xsd:string
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Vehicle>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/inspects>
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/inspectionId>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/inspectionStatusDescription>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ipsQDocumentationText>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/vin17>;
+      sh:datatype xsd:string
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SerialPart>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/confirms>
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ipsQVehicleId>;
+      sh:datatype xsd:string
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/VehiclePlantMaster>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/takesPlaceIn>
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/serialNumber>;
+      sh:datatype xsd:string
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PartsUsage>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/confirms>
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/VehicleInspection> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/VehiclePlantMasterShape>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/region>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/regionCode>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/countryCode>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/sfaIds>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/country>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/sapIds>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/cascadeIds>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/plant>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/VehiclePlantMaster> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/VehicleProductionStepShape>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/vehicleProductionStep>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/VehicleProductionStep> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/VehicleShape>
+  a sh:NodeShape;
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Vehicle> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/VehicleShapeAssociation>
+  a sh:NodeShape;
+  sh:property [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/massInRunningOrder>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/saCode5>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/localAssemblyStartDate>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/derivate>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/assemblyStartData>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/masterDataPakNr>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ipsQVehicleId>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/seriesIntroductionId>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/modelRange>;
+      sh:datatype xsd:string
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ConsumptionCheckpoint>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/has>
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/localBuiltTime>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/productType>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/localBuiltDate>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/colourCode>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/legislatorId>;
+      sh:datatype xsd:string
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Feature>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/hasActive>
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/localBuiltTimeZone>;
+      sh:datatype xsd:string
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/VehiclePlantMaster>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/isAssembledIn>
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/actualMass>;
+      sh:datatype xsd:string
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/VehicleType>
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Software>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/hasInstalled>
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PartsUsage>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/uses>
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/buildStatus>;
+      sh:datatype xsd:decimal
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/oderNumber>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/vehicleType>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/builtTimestamp>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/integrationLevel>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/fabricCode>;
+      sh:datatype xsd:string
+    ], [
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/modelCode>;
+      sh:datatype xsd:string
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Vehicle> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/VehicleTypeShapeAssociation>
+  a sh:NodeShape;
+  sh:property [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ComponentType>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/consistsOf>
+    ], [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PartsUsage>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/uses>
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/VehicleType> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Weight> a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/DVFThing>;
+  rdfs:label "Weight"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Weight"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/WeightShape> a
+    sh:NodeShape;
+  sh:property [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/SubstanceComposition>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/substacneWeight>
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Weight> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/componentId> a owl:DatatypeProperty;
+  rdfs:label "Component Id"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Component Id"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/isLinkeVia> a owl:ObjectProperty;
+  rdfs:label "is linked via"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "is linked via"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/PartFamily> a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/Common/MasterData>;
+  rdfs:label "Part Family"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Part Family"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/PartFamilyShape> a
+    sh:NodeShape;
+  sh:property [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PartFamily>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/isLinkeVia>
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/PartFamily> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/Ppg> a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/Common/MasterData>;
+  rdfs:label "Ppg"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Ppg"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/PpgShape> a sh:NodeShape;
+  sh:property [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PpgMaster>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/isLinkeVia>
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/Ppg> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/StructuralLevel> a
+    owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/Common/MasterData>;
+  rdfs:label "Structural Level"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Structural Level"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/StructuralLevelShape>
+  a sh:NodeShape;
+  sh:property [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/StructuralLevel>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/isLinkeVia>
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/StructuralLevel> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/Upg> a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/Common/MasterData>;
+  rdfs:label "Upg"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Upg"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/UpgShape> a sh:NodeShape;
+  sh:property [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/UpgMaster>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/isLinkeVia>
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/Upg> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/VehicleProductionStep>
+  a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/Common/MasterData>;
+  rdfs:label "Vehicle Production Step"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Vehicle Production Step"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/VehicleProductionStepShape>
+  a sh:NodeShape;
+  sh:property [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/VehicleProductionStep>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/isLinkeVia>
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/VehicleProductionStep> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/Expansion> a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/Common/Concept>, <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/DVFThing>;
+  rdfs:label "Expansion"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Expansion"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/ExpansionShape> a
+    sh:NodeShape;
+  sh:property [
+      sh:class <https://graph.bmwgroup.net/Ontology/Part/SerializedPart>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/expandedBy>
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/Expansion> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/isUsedIn> a owl:ObjectProperty;
+  rdfs:label "is used in"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "is used in"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/supplierNumber> a
+    owl:DatatypeProperty;
+  rdfs:label "Supplier Number"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Supplier Number"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/DigitalProductTwin>
+  a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/Common/Product>;
+  rdfs:label "Digital Product Twin"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Digital Product Twin"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/isInstalledIn> a owl:ObjectProperty;
+  rdfs:label "is installed in"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "is installed in"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/DigitalProductTwinShape>
+  a sh:NodeShape;
+  sh:property [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/DigitalProductTwin>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/isInstalledIn>
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/DigitalProductTwin> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/Inspection> a owl:Class;
+  rdfs:subClassOf <https://graph.bmwgroup.net/Ontology/Upper/Event>, <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/Event>;
+  rdfs:label "Inspection"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Inspection"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology/inspects> a owl:ObjectProperty;
+  rdfs:label "inspects"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "inspects"@en .
+
+<https://graph.bmwgroup.net/Ontology/BillOfMaterial/ManufacturingBillOfMaterialShape>
+  a sh:NodeShape;
+  sh:property [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PartsUsage>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/uses>
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/BillOfMaterial/ManufacturingBillOfMaterial> .
+
+<https://graph.bmwgroup.net/Ontology/Common/ComponentShape> a sh:NodeShape;
+  sh:property [
+      sh:class <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/PartVersionMaster>;
+      sh:path <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/references>
+    ];
+  sh:targetClass <https://graph.bmwgroup.net/Ontology/Common/Component> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/value> a owl:DatatypeProperty;
+  rdfs:label "Value"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Value"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/unit> a owl:DatatypeProperty;
+  rdfs:label "Unit"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Unit"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/appID> a owl:DatatypeProperty;
+  rdfs:label "App Id"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "App Id"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/appDescription>
+  a owl:DatatypeProperty;
+  rdfs:label "App Description"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "App Description"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/appVersion> a
+    owl:DatatypeProperty;
+  rdfs:label "App Version"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "App Version"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/componentProductionStep>
+  a owl:DatatypeProperty;
+  rdfs:label "Component Production Step"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Component Production Step"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/changeIndex> a
+    owl:DatatypeProperty;
+  rdfs:label "Change Index"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Change Index"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/partNumber> a
+    owl:DatatypeProperty;
+  rdfs:label "Part Number"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Part Number"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/serialNumber>
+  a owl:DatatypeProperty;
+  rdfs:label "Serial Number"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Serial Number"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/fullBarcode> a
+    owl:DatatypeProperty;
+  rdfs:label "Full Barcode"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Full Barcode"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/qualityOrderId>
+  a owl:DatatypeProperty;
+  rdfs:label "Quality Order Id"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Quality Order Id"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/inspectionTimestamp>
+  a owl:DatatypeProperty;
+  rdfs:label "Inspection Timestamp"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Inspection Timestamp"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/plantId> a owl:DatatypeProperty;
+  rdfs:label "Plant Id"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Plant Id"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/consumptionCheckPoint>
+  a owl:DatatypeProperty;
+  rdfs:label "Consumption Check Point"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Consumption Check Point"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/validFrom> a owl:DatatypeProperty;
+  rdfs:label "Valid From"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Valid From"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/dataCreationTimestamp>
+  a owl:DatatypeProperty;
+  rdfs:label "Data Creation Timestamp"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Data Creation Timestamp"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/validUntil> a
+    owl:DatatypeProperty;
+  rdfs:label "Valid Until"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Valid Until"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/status> a owl:DatatypeProperty;
+  rdfs:label "Status"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Status"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/measurementUId>
+  a owl:DatatypeProperty;
+  rdfs:label "Measurement UId"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Measurement UId"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/timestamp> a owl:DatatypeProperty;
+  rdfs:label "Timestamp"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Timestamp"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/resistance> a
+    owl:DatatypeProperty;
+  rdfs:label "Resistance"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Resistance"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/voltage> a owl:DatatypeProperty;
+  rdfs:label "Voltage"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Voltage"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/inductivity> a
+    owl:DatatypeProperty;
+  rdfs:label "Inductivity"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Inductivity"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/eventTimestamp>
+  a owl:DatatypeProperty;
+  rdfs:label "Event Timestamp"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Event Timestamp"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/uId> a owl:DatatypeProperty;
+  rdfs:label "UId"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "UId"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/diagnosticAddress>
+  a owl:DatatypeProperty;
+  rdfs:label "Diagnostic Address"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Diagnostic Address"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/featureSubId>
+  a owl:DatatypeProperty;
+  rdfs:label "Feature Sub Id"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Feature Sub Id"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/installedSuccess>
+  a owl:DatatypeProperty;
+  rdfs:label "Installed Success"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Installed Success"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/tokenIdEcuUid>
+  a owl:DatatypeProperty;
+  rdfs:label "Token Id Ecu Uid"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Token Id Ecu Uid"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/featureRedeliverStatus>
+  a owl:DatatypeProperty;
+  rdfs:label "Feature Redeliver Status"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Feature Redeliver Status"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/featureSpecificFields>
+  a owl:DatatypeProperty;
+  rdfs:label "Feature Specific Fields"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Feature Specific Fields"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/tokenId> a owl:DatatypeProperty;
+  rdfs:label "Token Id"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Token Id"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/linkToIdType>
+  a owl:DatatypeProperty;
+  rdfs:label "Link To Id Type"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Link To Id Type"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/orderer> a owl:DatatypeProperty;
+  rdfs:label "Orderer"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Orderer"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/tokenCreationTimestamp>
+  a owl:DatatypeProperty;
+  rdfs:label "Token Creation Timestamp"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Token Creation Timestamp"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/enableType> a
+    owl:DatatypeProperty;
+  rdfs:label "Enable Type"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Enable Type"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/featureId> a owl:DatatypeProperty;
+  rdfs:label "Feature Id"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Feature Id"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/oderNumber> a
+    owl:DatatypeProperty;
+  rdfs:label "Order Number"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Order Number"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/commentLanguageDependent>
+  a owl:DatatypeProperty;
+  rdfs:label "Comment Language Dependent"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Comment Language Dependent"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/pnAssignmentToGeneric>
+  a owl:DatatypeProperty;
+  rdfs:label "Pn Assignment To Generic Part"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Pn Assignment To Generic Part"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/hvsDmcBatteryCode>
+  a owl:DatatypeProperty;
+  rdfs:label "Hvs Dmc Battery Code"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Hvs Dmc Battery Code"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/rhLhIdentifier>
+  a owl:DatatypeProperty;
+  rdfs:label "Rh Lh Identifier"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Rh Lh Identifier"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/standardDescriptionId>
+  a owl:DatatypeProperty;
+  rdfs:label "Standard Description Id"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Standard Description Id"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/paintType> a owl:DatatypeProperty;
+  rdfs:label "Paint Type"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Paint Type"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/weight> a owl:DatatypeProperty;
+  rdfs:label "Weight"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Weight"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/shortName> a owl:DatatypeProperty;
+  rdfs:label "Short Name"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Short Name"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/partNumberDepartment>
+  a owl:DatatypeProperty;
+  rdfs:label "Part Number Department"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Part Number Department"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/initialUseModel>
+  a owl:DatatypeProperty;
+  rdfs:label "Initial Use Model"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Initial Use Model"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/drawingIndex>
+  a owl:DatatypeProperty;
+  rdfs:label "Drawing Index"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Drawing Index"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/partsOrigin> a
+    owl:DatatypeProperty;
+  rdfs:label "Parts Origin"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Parts Origin"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/hvsDmcSpecificationCode>
+  a owl:DatatypeProperty;
+  rdfs:label "Hvs Dmc Specification Code"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Hvs Dmc Specification Code"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/componentGroupCode>
+  a owl:DatatypeProperty;
+  rdfs:label "Component Group Code"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Component Group Code"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/numberOfMaterialType>
+  a owl:DatatypeProperty;
+  rdfs:label "Number Of Material Type"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Number Of Material Type"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/hwSwCode> a owl:DatatypeProperty;
+  rdfs:label "Hw Sw Code"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Hw Sw Code"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/transmissionCodeReferenceCode>
+  a owl:DatatypeProperty;
+  rdfs:label "Transmission Code Reference Code"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Transmission Code Reference Code"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/btrv> a owl:DatatypeProperty;
+  rdfs:label "Btrv"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Btrv"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/inhouseComponent>
+  a owl:DatatypeProperty;
+  rdfs:label "Inhouse Component"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Inhouse Component"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/sourcingType>
+  a owl:DatatypeProperty;
+  rdfs:label "Sourcing Type"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Sourcing Type"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/salPartNumber>
+  a owl:DatatypeProperty;
+  rdfs:label "Sal Part Number"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Sal Part Number"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/partGroup> a owl:DatatypeProperty;
+  rdfs:label "Part Group"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Part Group"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/partNumberStatus>
+  a owl:DatatypeProperty;
+  rdfs:label "Part Number Status"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Part Number Status"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/drawingFormat>
+  a owl:DatatypeProperty;
+  rdfs:label "Drawing Format"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Drawing Format"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/partNumberType>
+  a owl:DatatypeProperty;
+  rdfs:label "Part Number Type"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Part Number Type"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/partType> a owl:DatatypeProperty;
+  rdfs:label "Part Type"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Part Type"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/sparePartCode>
+  a owl:DatatypeProperty;
+  rdfs:label "Spare Part Code"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Spare Part Code"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/dangerousGoodsMarking>
+  a owl:DatatypeProperty;
+  rdfs:label "Dangerous Goods Marking"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Dangerous Goods Marking"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/standardPartJitCode>
+  a owl:DatatypeProperty;
+  rdfs:label "Standard Part Jit Code"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Standard Part Jit Code"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/unitOfQuantity>
+  a owl:DatatypeProperty;
+  rdfs:label "Unit Of Quantity"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Unit Of Quantity"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/characterCode>
+  a owl:DatatypeProperty;
+  rdfs:label "Character Code"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Character Code"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/lMarking> a owl:DatatypeProperty;
+  rdfs:label "L Marking"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "L Marking"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/recyclingClass>
+  a owl:DatatypeProperty;
+  rdfs:label "Recycling Class "@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Recycling Class "@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/partDescription>
+  a owl:DatatypeProperty;
+  rdfs:label "Part Description"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Part Description"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/jitCode> a owl:DatatypeProperty;
+  rdfs:label "Jit Code"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Jit Code"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/salChangeIndex>
+  a owl:DatatypeProperty;
+  rdfs:label "Sal Change Index"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Sal Change Index"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/partNumberClass>
+  a owl:DatatypeProperty;
+  rdfs:label "Part Number Class"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Part Number Class"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/hvsDmcChargingParameter>
+  a owl:DatatypeProperty;
+  rdfs:label "Hvs Dmc Charging Parameter"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Hvs Dmc Charging Parameter"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/hvsDmcRelevance>
+  a owl:DatatypeProperty;
+  rdfs:label "Hvs Dmc Relevance"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Hvs Dmc Relevance"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/partCode> a owl:DatatypeProperty;
+  rdfs:label "Part Code"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Part Code"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/predecessorPartNumber>
+  a owl:DatatypeProperty;
+  rdfs:label "Predecessor Part Number"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Predecessor Part Number"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/productionProcess>
+  a owl:DatatypeProperty;
+  rdfs:label "Production Process"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Production Process"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/salPartDescription>
+  a owl:DatatypeProperty;
+  rdfs:label "Sal Part Description"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Sal Part Description"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/pseudoChangeIndex>
+  a owl:DatatypeProperty;
+  rdfs:label "Pseudo Change Index"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Pseudo Change Index"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/sapChangeNumber>
+  a owl:DatatypeProperty;
+  rdfs:label "Sap Change Number"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Sap Change Number"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/label> a owl:DatatypeProperty;
+  rdfs:label "Label"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Label"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/supplier> a owl:DatatypeProperty;
+  rdfs:label "Supplier"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Supplier"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/selectionTable>
+  a owl:DatatypeProperty;
+  rdfs:label "Selection Table"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Selection Table"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/quantity> a owl:DatatypeProperty;
+  rdfs:label "Quantity"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Quantity"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/buildTimezone>
+  a owl:DatatypeProperty;
+  rdfs:label "Build Timezone"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Build Timezone"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/buildDate> a owl:DatatypeProperty;
+  rdfs:label "Build Date"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Build Date"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/encodedKdsPublicKey>
+  a owl:DatatypeProperty;
+  rdfs:label "Encoded Kds Public Key"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Encoded Kds Public Key"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/statusResponsible>
+  a owl:DatatypeProperty;
+  rdfs:label "Status Responsible"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Status Responsible"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/supplierSerialNumber>
+  a owl:DatatypeProperty;
+  rdfs:label "Supplier Serial Number"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Supplier Serial Number"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/uIdPrefix> a owl:DatatypeProperty;
+  rdfs:label "UId Prefix"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "UId Prefix"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/uIdSerialNumber>
+  a owl:DatatypeProperty;
+  rdfs:label "UId Serial Number"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "UId Serial Number"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ecuId> a owl:DatatypeProperty;
+  rdfs:label "Ecu Id"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Ecu Id"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/enginePosition>
+  a owl:DatatypeProperty;
+  rdfs:label "Engine Position"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Engine Position"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/vehicleAssignementTimestamp>
+  a owl:DatatypeProperty;
+  rdfs:label "Vehicle Assignement Timestamp"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Vehicle Assignement Timestamp"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/engineModel> a
+    owl:DatatypeProperty;
+  rdfs:label "Engine Model"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Engine Model"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/gearboxNumber>
+  a owl:DatatypeProperty;
+  rdfs:label "Gearbox Number"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Gearbox Number"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/cellId> a owl:DatatypeProperty;
+  rdfs:label "Cell Id"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Cell Id"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/gbtCode> a owl:DatatypeProperty;
+  rdfs:label "Gbt Code"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Gbt Code"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/logicalCellId>
+  a owl:DatatypeProperty;
+  rdfs:label "Logical Cell Id"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Logical Cell Id"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/hvbUId> a owl:DatatypeProperty;
+  rdfs:label "Hvb UId";
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0> .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/moduleId> a owl:DatatypeProperty;
+  rdfs:label "Module Id"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Module Id"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/capacityFade>
+  a owl:DatatypeProperty;
+  rdfs:label "Capacity Fade"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Capacity Fade"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/energyThroughput>
+  a owl:DatatypeProperty;
+  rdfs:label "Energy Throughput"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Energy Throughput"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/capacityMean>
+  a owl:DatatypeProperty;
+  rdfs:label "Capacity Mean"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Capacity Mean"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/numberOfFullChargings>
+  a owl:DatatypeProperty;
+  rdfs:label "Number Of Full Chargings"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Number Of Full Chargings"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/capacityThroughput>
+  a owl:DatatypeProperty;
+  rdfs:label "Capacity Throughput"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Capacity Throughput"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/capacityAgingMean>
+  a owl:DatatypeProperty;
+  rdfs:label "Capacity Aging Mean"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Capacity Aging Mean"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/numberOfChargings>
+  a owl:DatatypeProperty;
+  rdfs:label "Number Of Chargings"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Number Of Chargings"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/capacityMin> a
+    owl:DatatypeProperty;
+  rdfs:label "Capacity Min"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Capacity Min"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/capacityAgingMin>
+  a owl:DatatypeProperty;
+  rdfs:label "Capacity Aging Min"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Capacity Aging Min"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/supplierName>
+  a owl:DatatypeProperty;
+  rdfs:label "Supplier Name"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Supplier Name"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/builtTimestamp>
+  a owl:DatatypeProperty;
+  rdfs:label "Built Timestamp"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Built Timestamp"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/supplierId> a
+    owl:DatatypeProperty;
+  rdfs:label "Supplier Id"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Supplier Id"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/signatureType>
+  a owl:DatatypeProperty;
+  rdfs:label "Signature Type"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Signature Type"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/version> a owl:DatatypeProperty;
+  rdfs:label "Version"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Version"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/certificateSerialNumber>
+  a owl:DatatypeProperty;
+  rdfs:label "Certificate Serial Number"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Certificate Serial Number"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/signature> a owl:DatatypeProperty;
+  rdfs:label "Signature"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Signature"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/linkToIdEcu> a
+    owl:DatatypeProperty;
+  rdfs:label "Link To Id Ecu List"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Link To Id Ecu List"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/commonNameOfCertificate>
+  a owl:DatatypeProperty;
+  rdfs:label "Common Name Of Certificate User"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Common Name Of Certificate User"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/description> a
+    owl:DatatypeProperty;
+  rdfs:label "Description"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Description"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/substanceName>
+  a owl:DatatypeProperty;
+  rdfs:label "Substance Name"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Substance Name"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/patchVersion>
+  a owl:DatatypeProperty;
+  rdfs:label "Patch Version"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Patch Version"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/processClassValue>
+  a owl:DatatypeProperty;
+  rdfs:label "Process Class Value"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Process Class Value"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/sgbmId> a owl:DatatypeProperty;
+  rdfs:label "Sgbm Id"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Sgbm Id"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/sgbdIndex> a owl:DatatypeProperty;
+  rdfs:label "Sgbd Index"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Sgbd Index"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/mainVersion> a
+    owl:DatatypeProperty;
+  rdfs:label "Main Version"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Main Version"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/processClassText>
+  a owl:DatatypeProperty;
+  rdfs:label "Process Class Text"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Process Class Text"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/subVersion> a
+    owl:DatatypeProperty;
+  rdfs:label "Sub Version"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Sub Version"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/sgbdVar> a owl:DatatypeProperty;
+  rdfs:label "Sgbd Var"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Sgbd Var"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/lastBillingExportObject>
+  a owl:DatatypeProperty;
+  rdfs:label "Last Billing Export Object Key"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Last Billing Export Object Key"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/billingData> a
+    owl:DatatypeProperty;
+  rdfs:label "Billing Data"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Billing Data"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/installationTaktNumber>
+  a owl:DatatypeProperty;
+  rdfs:label "Installation Takt Number"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Installation Takt Number"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ipsQVehicleId>
+  a owl:DatatypeProperty;
+  rdfs:label "Ips Q Vehicle Id"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Ips Q Vehicle Id"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/vin17> a owl:DatatypeProperty;
+  rdfs:label "Vin 17"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Vin 17"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ipsQDocumentationId>
+  a owl:DatatypeProperty;
+  rdfs:label "Ips Q Documentation Id"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Ips Q Documentation Id"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/ipsQDocumentationText>
+  a owl:DatatypeProperty;
+  rdfs:label "Ips Q Documentation Text"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Ips Q Documentation Text"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/inspectionId>
+  a owl:DatatypeProperty;
+  rdfs:label "Inspection Id"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Inspection Id"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/inspectionStatusNumber>
+  a owl:DatatypeProperty;
+  rdfs:label "Inspection Status Number"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Inspection Status Number"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/inspectionStatusDescription>
+  a owl:DatatypeProperty;
+  rdfs:label "Inspection Status Description"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Inspection Status Description"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/inspectionResultRemark>
+  a owl:DatatypeProperty;
+  rdfs:label "Inspection Result Remark"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Inspection Result Remark"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/country> a owl:DatatypeProperty;
+  rdfs:label "Country"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Country"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/region> a owl:DatatypeProperty;
+  rdfs:label "Region"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Region"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/countryCode> a
+    owl:DatatypeProperty;
+  rdfs:label "Country Code"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Country Code"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/cascadeIds> a
+    owl:DatatypeProperty;
+  rdfs:label "Cascade Ids"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Cascade Ids"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/plant> a owl:DatatypeProperty;
+  rdfs:label "Plant"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Plant"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/sfaIds> a owl:DatatypeProperty;
+  rdfs:label "Sfa Ids"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Sfa Ids"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/regionCode> a
+    owl:DatatypeProperty;
+  rdfs:label "Region Code"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Region Code"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/sapIds> a owl:DatatypeProperty;
+  rdfs:label "Sap Ids"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Sap Ids"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/vehicleProductionStep>
+  a owl:DatatypeProperty;
+  rdfs:label "Vehicle Production Step"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Vehicle Production Step"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/fabricCode> a
+    owl:DatatypeProperty;
+  rdfs:label "Fabric Code"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Fabric Code"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/localBuiltTimeZone>
+  a owl:DatatypeProperty;
+  rdfs:label "Local Built Time Zone"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Local Built Time Zone"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/seriesIntroductionId>
+  a owl:DatatypeProperty;
+  rdfs:label "Series Introduction Id"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Series Introduction Id"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/buildStatus> a
+    owl:DatatypeProperty;
+  rdfs:label "Build Status"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Build Status"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/modelRange> a
+    owl:DatatypeProperty;
+  rdfs:label "Model Range"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Model Range"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/actualMass> a
+    owl:DatatypeProperty;
+  rdfs:label "Actual Mass"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Actual Mass"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/massInRunningOrder>
+  a owl:DatatypeProperty;
+  rdfs:label "Mass In Running Order"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Mass In Running Order"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/saCode5> a owl:DatatypeProperty;
+  rdfs:label "Sa Code 5"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Sa Code 5"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/assemblyStartData>
+  a owl:DatatypeProperty;
+  rdfs:label "Assembly Start Date"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Assembly Start Date"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/productType> a
+    owl:DatatypeProperty;
+  rdfs:label "Product Type"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Product Type"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/integrationLevel>
+  a owl:DatatypeProperty;
+  rdfs:label "Integration Level"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Integration Level"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/localAssemblyStartDate>
+  a owl:DatatypeProperty;
+  rdfs:label "Local Assembly Start Date"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Local Assembly Start Date"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/derivate> a owl:DatatypeProperty;
+  rdfs:label "Derivate"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Derivate"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/masterDataPakNr>
+  a owl:DatatypeProperty;
+  rdfs:label "Master Data Pak Nr"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Master Data Pak Nr"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/modelCode> a owl:DatatypeProperty;
+  rdfs:label "Model Code"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Model Code"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/localBuiltDate>
+  a owl:DatatypeProperty;
+  rdfs:label "Local Built Date"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Local Built Date"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/vehicleType> a
+    owl:DatatypeProperty;
+  rdfs:label "Vehicle Type"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Vehicle Type"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/localBuiltTime>
+  a owl:DatatypeProperty;
+  rdfs:label "Local Built Time"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Local Built Time"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/legislatorId>
+  a owl:DatatypeProperty;
+  rdfs:label "Legislator Id"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Legislator Id"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/colourCode> a
+    owl:DatatypeProperty;
+  rdfs:label "Colour Code"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Colour Code"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/cathodeComposition>
+  a owl:DatatypeProperty;
+  rdfs:label "Cathode Composition"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Cathode Composition"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/criticalRawSubstances>
+  a owl:DatatypeProperty;
+  rdfs:label "Critical Raw Substances"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Critical Raw Substances"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/electrolyteComposition>
+  a owl:DatatypeProperty;
+  rdfs:label "Electrolyte Composition"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Electrolyte Composition"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/engineNumber>
+  a owl:DatatypeProperty;
+  rdfs:label "Engine Number"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Engine Number"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/engineSerialNumber>
+  a owl:DatatypeProperty;
+  rdfs:label "Engine Serial Number"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Engine Serial Number"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/hazardousSubstances>
+  a owl:DatatypeProperty;
+  rdfs:label "Hazardous Substances"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Hazardous Substances"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/materialGroupTopLevel>
+  a owl:DatatypeProperty;
+  rdfs:label "Material Group Top Level"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Material Group Top Level"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/plannedOrderNumber>
+  a owl:DatatypeProperty;
+  rdfs:label "Planned Order Number"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Planned Order Number"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/plannedState>
+  a owl:DatatypeProperty;
+  rdfs:label "Planned State"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Planned State"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/plantCode> a owl:DatatypeProperty;
+  rdfs:label "Plant Code"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Plant Code"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/reportedState>
+  a owl:DatatypeProperty;
+  rdfs:label "Reported State"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Reported State"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/reservationItemNumber>
+  a owl:DatatypeProperty;
+  rdfs:label "Reservation Item Number"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Reservation Item Number"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/reservationNumber>
+  a owl:DatatypeProperty;
+  rdfs:label "Reservation Number"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Reservation Number"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/substanceWeight>
+  a owl:DatatypeProperty;
+  rdfs:label "Substance Weight"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Substance Name"@en .
+
+<https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0/validityConditions>
+  a owl:DatatypeProperty;
+  rdfs:label "Validity Conditions"@en;
+  rdfs:isDefinedBy <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  skos:prefLabel "Validity Conditions"@en .
+
+<https://graph.bmwgroup.net/Data/c723af48-f0bf-44d8-b4e7-101fefabec32> a <https://graph.bmwgroup.net/Ontology/BusinessObject/OntologyChange>;
+  <https://graph.bmwgroup.net/Ontology/Upper/dateTime> "2024-09-26T10:30:14.492Z"^^xsd:dateTime;
+  <https://graph.bmwgroup.net/Ontology/Common/affects> <https://graph.bmwgroup.net/Ontology/DigitalVehicleTwinOntology-1.0>;
+  <https://graph.bmwgroup.net/Ontology/Common/isChangedBy> <https://graph.bmwgroup.net/Data/dc36f1ab-874a-49a0-8a1e-18bc64eeb20e>;
+  <https://graph.bmwgroup.net/Ontology/Common/changeType> "contents" .
