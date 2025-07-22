@@ -28,25 +28,29 @@ def ensure_prefixes(query):
     return query
 
 def call_connector(tool, query):
-    global uploaded_ontology_path
+    global uploaded_file_info
     try:
-        if tool == "query_sparql":
-            if not uploaded_ontology_path:
-                return "No ontology file uploaded. Please upload an ontology file first."
+        # Ensure a file has been uploaded
+        if not uploaded_file_info:
+            return "No file uploaded. Please upload a file first."
 
-            # Dynamically load the ontology
-            rdf_connector = RDFConnector(uploaded_ontology_path)
+        file_path = uploaded_file_info.get("path")
+        file_format = uploaded_file_info.get("format")
+
+        # Decide the connector based on file format
+        if file_format == '.ttl':  # RDF Turtle file
+            rdf_connector = RDFConnector(file_path)
             query = ensure_prefixes(query)
             results = rdf_connector.execute_query(query)
             return "; ".join(results) if results else "No matches found."
-        elif tool == "query_mongo":
-            if 'MongoConnector' in connectors:
-                results = connectors['MongoConnector'].execute_query(query)
-                return "; ".join(results) if results else "No service history found."
-            else:
-                return "MongoDB connector not available."
+        elif file_format == '.json':  # JSON file
+            # Implement a JSON connector (example placeholder)
+            return "JSON connector not implemented yet."
+        elif file_format == '.csv':  # CSV file
+            # Implement a CSV connector (example placeholder)
+            return "CSV connector not implemented yet."
         else:
-            return "Unknown tool selected."
+            return "Unsupported file format."
     except Exception as e:
         return f"Error processing query: {str(e)}"
 
@@ -92,11 +96,10 @@ def chat():
 
     return jsonify({"answer": answer})
 
-uploaded_ontology_path = None  # Global variable to store the ontology path
+uploaded_file_info = {}  # Global dictionary to store file path and format
 
 @app.route('/upload', methods=['POST'])
 def upload_ontology():
-    global uploaded_ontology_path
     if 'ontology' not in request.files:
         return jsonify({"error": "No file part in the request"}), 400
 
@@ -104,16 +107,38 @@ def upload_ontology():
     if file.filename == '':
         return jsonify({"error": "No file selected"}), 400
 
-    if not file.filename.endswith('.ttl'):
-        return jsonify({"error": "Invalid file type. Please upload a .ttl file"}), 400
-
     try:
         file_path = os.path.join(UPLOAD_FOLDER, file.filename)
         file.save(file_path)
-        uploaded_ontology_path = file_path  # Save the file path globally
-        return jsonify({"message": "Ontology uploaded successfully!", "file_path": file_path}), 200
+        return jsonify({"message": "File uploaded successfully!", "file_path": file_path}), 200
     except Exception as e:
-        return jsonify({"error": f"Failed to upload ontology: {str(e)}"}), 500
+        return jsonify({"error": f"Failed to upload file: {str(e)}"}), 500
+
+@app.route('/connect', methods=['POST'])
+def connect_database():
+    data = request.json
+    graph_db_url = data.get('graphDbUrl')
+    mongo_db_url = data.get('mongoDbUrl')
+
+    connections = {}
+
+    try:
+        # Connect to Graph Database
+        if graph_db_url:
+            # Placeholder for actual graph database connection logic
+            connections['graph_db'] = f"Connected to Graph Database at {graph_db_url}"
+
+        # Connect to MongoDB
+        if mongo_db_url:
+            # Placeholder for actual MongoDB connection logic
+            connections['mongo_db'] = f"Connected to MongoDB at {mongo_db_url}"
+
+        if not connections:
+            return jsonify({"error": "No database connection details provided."}), 400
+
+        return jsonify({"message": "Connected successfully!", "connections": connections}), 200
+    except Exception as e:
+        return jsonify({"error": f"Failed to connect to database(s): {str(e)}"}), 500
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
