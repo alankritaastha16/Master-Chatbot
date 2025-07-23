@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set "VIRTUAL_ENV=C:\Alan\anki\work\delloite\merging data from DB's\kg-chatbot\venv"
+set "VIRTUAL_ENV=C:\Alan\anki\work\delloite\Master_Chatbot\Master-Chatbot\venv"
 
 if not defined PROMPT set PROMPT=$P$G
 

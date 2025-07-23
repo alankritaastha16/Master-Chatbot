@@ -1,0 +1,357 @@
+/* General Body and Font Styles */
+body {
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f0f2f5; /* Light grey background */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+/* New: Hidden utility class */
+.hidden {
+    display: none !important; /* Force hide, override other display properties */
+}
+
+/* Status Message */
+.status-message {
+    margin-top: 15px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    background-color: #d4edda; /* Light green for success */
+    color: #155724; /* Dark green text */
+    border: 1px solid #c3e6cb;
+    text-align: center;
+    font-weight: bold;
+    opacity: 0; /* Start hidden for transition */
+    transform: translateY(10px); /* Start slightly below */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.status-message.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Main Container */
+.container {
+    width: 100%;
+    max-width: 680px; /* Slightly wider for better content display */
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Softer, more pronounced shadow */
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Spacing between main sections */
+}
+
+/* Header */
+.header {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Dropdown and Option Containers */
+.dropdown, .option-container {
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fcfcfc;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, height 0.5s ease-out; /* Smooth transitions */
+    overflow: hidden; /* Hide overflow during height transition */
+    opacity: 0; /* Start hidden */
+    transform: translateY(10px); /* Start slightly below */
+    height: 0; /* Start with height 0 */
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.dropdown.active, .option-container.active {
+    opacity: 1;
+    transform: translateY(0);
+    height: auto; /* Allow height to adjust */
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Specific styling for dropdown to be always active initially */
+.dropdown {
+    opacity: 1;
+    transform: translateY(0);
+    height: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+
+.dropdown label, .option-container label, .section-label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #555;
+    font-size: 1.05em;
+}
+
+select, input[type="text"], input[type="file"] {
+    width: calc(100% - 22px); /* Adjust for padding and border */
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+select:focus, input[type="text"]:focus, input[type="file"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    width: auto; /* Allow button to size naturally */
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.db-url-input {
+    margin-left: 20px;
+    margin-top: 5px;
+    padding-left: 0; /* Remove padding specific to this input group */
+}
+.db-type-checkboxes div {
+    margin-bottom: 10px;
+}
+
+
+/* Chat-specific styles */
+#chat-interface {
+    opacity: 0; /* Start hidden for transition */
+    transform: translateY(20px); /* Start slightly below */
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out; /* Slower transition for chat */
+}
+
+#chat-interface.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.chat-box {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    height: 400px;
+    overflow-y: auto;
+    padding: 15px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between messages */
+    margin-bottom: 15px;
+}
+
+.msg {
+    display: flex;
+    align-items: flex-start;
+    max-width: 80%;
+}
+
+.msg.user {
+    align-self: flex-end;
+    justify-content: flex-end;
+}
+
+.msg.bot {
+    align-self: flex-start;
+    justify-content: flex-start;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.msg.user .icon {
+    margin-left: 10px;
+    background-color: #28a745; /* Green for user */
+}
+
+.msg.bot .icon {
+    margin-right: 10px;
+}
+
+.bubble {
+    padding: 10px 15px;
+    border-radius: 18px;
+    background-color: #e9e9eb;
+    word-wrap: break-word;
+    white-space: pre-wrap; /* Preserve whitespace and line breaks */
+    flex-grow: 1; /* Allow bubble to grow */
+}
+
+.msg.user .bubble {
+    background-color: #e0f2f7; /* Light blue for user bubble */
+    color: #333;
+}
+
+.msg.bot .bubble {
+    background-color: #f0f0f0; /* Light gray for bot bubble */
+    color: #333;
+}
+
+.input-area {
+    display: flex;
+    gap: 10px;
+}
+
+.input-area input {
+    flex-grow: 1;
+    margin-bottom: 0; /* Override default margin */
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #007bff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    display: none; /* Hidden by default */
+    align-self: center; /* Center vertically */
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* For markdown rendering */
+.bubble p:first-child {
+    margin-top: 0;
+}
+.bubble p:last-child {
+    margin-bottom: 0;
+}
+
+.bubble pre {
+    background-color: #eee;
+    padding: 5px;
+    border-radius: 4px;
+    overflow-x: auto;
+}
+.bubble code {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f5f5f5;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+.bubble pre code {
+    background-color: transparent;
+    padding: 0;
+}
+
+/* Alerts - These are general-purpose, the .status-message is more specific for upload */
+.alert {
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-size: 15px;
+    text-align: center;
+    color: white;
+    font-weight: 500;
+}
+
+.alert-success {
+    background-color: #28a745;
+}
+
+.alert-error {
+    background-color: #dc3545;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    .container {
+        padding: 15px;
+        margin: 0;
+        border-radius: 8px;
+    }
+
+    .header {
+        font-size: 20px;
+    }
+
+    .dropdown select,
+    input[type="file"],
+    input[type="text"],
+    button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .chat-box {
+        padding: 10px;
+        height: 300px; /* Smaller chat box on mobile */
+    }
+
+    .input-area {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .input-area input, .input-area button {
+        width: 100%;
+    }
+}

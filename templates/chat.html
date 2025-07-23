@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Chatbot</title>
+  <link rel="stylesheet" href="/static/chat.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="header">Master Chatbot</div>
+
+    <div class="dropdown active"> <label for="interaction-type">Choose an interaction type:</label>
+      <select id="interaction-type" onchange="handleSelection()">
+        <option value="">-- Select an option --</option>
+        <option value="upload">Upload Ontology File</option>
+        <option value="database">Connect to Database</option>
+      </select>
+    </div>
+
+    <div id="upload-container" class="option-container">
+      <label for="ontology-file">Upload Ontology File:</label>
+      <input type="file" id="ontology-file" accept=".ttl" name="file">
+      <button onclick="uploadOntology()">Upload Ontology</button>
+      <div id="upload-status-message" class="status-message"></div>
+    </div>
+
+    <div id="database-container" class="option-container">
+      <label class="section-label">Select Database Type(s):</label>
+      <div class="db-type-checkboxes">
+        <div>
+          <input type="checkbox" id="graph-db" name="database-type" value="graph" onchange="toggleDbUrlInput('graph-db', 'graph-db-url-input')">
+          <label for="graph-db">Graph Database (SPARQL Endpoint)</label>
+          <input type="text" id="graph-db-url-input" class="db-url-input hidden" placeholder="Enter SPARQL endpoint URL (e.g., http://localhost:7200/repositories/your-repo)">
+        </div>
+        <div>
+          <input type="checkbox" id="nosql-db" name="database-type" value="nosql" onchange="toggleDbUrlInput('nosql-db', 'nosql-db-url-input-container')">
+          <label for="nosql-db">NoSQL Database (e.g., MongoDB)</label>
+          <div id="nosql-db-url-input-container" class="db-url-input hidden">
+            <input type="text" id="nosql-db-url" placeholder="Enter MongoDB URL (e.g., mongodb://localhost:27017/)">
+            <input type="text" id="nosql-db-name" placeholder="Enter Database Name">
+            <input type="text" id="nosql-db-collection" placeholder="Enter Collection Name">
+          </div>
+        </div>
+      </div>
+      <button onclick="connectDatabases()">Connect to Databases</button>
+    </div>
+
+    <div id="chat-interface">
+      <div class="chat-box" id="chat-box">
+        </div>
+      <div class="input-area">
+        <input type="text" id="question-input" placeholder="Type your message..." disabled>
+        <button id="send-btn" onclick="sendMessage()" disabled>Send</button>
+        <div class="spinner" id="spinner"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize Marked.js
+      marked.setOptions({
+        breaks: true, // Allow line breaks in Markdown
+      });
+      handleSelection(); // Set initial state of the UI elements
+
+      // Enable "Enter" key to send message
+      document.getElementById('question-input').addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+          event.preventDefault(); // Prevent default form submission
+          sendMessage();
+        }
+      });
+    });
+
+    // Toggle visibility of URL input based on checkbox
+    function toggleDbUrlInput(checkboxId, inputId) {
+      const checkbox = document.getElementById(checkboxId);
+      const input = document.getElementById(inputId);
+      if (checkbox.checked) {
+        input.classList.remove('hidden');
+      } else {
+        input.classList.add('hidden');
+      }
+    }
+
+    // Handle selection from the dropdown
+    function handleSelection() {
+      const selectedOption = document.getElementById('interaction-type').value;
+      const uploadContainer = document.getElementById('upload-container');
+      const databaseContainer = document.getElementById('database-container');
+      const chatInterface = document.getElementById('chat-interface');
+      const uploadStatusMessage = document.getElementById('upload-status-message'); // Ensure this is hidden when selection changes
+
+      // Remove 'active' from all option containers and chat interface
+      uploadContainer.classList.remove('active');
+      databaseContainer.classList.remove('active');
+      chatInterface.classList.remove('active');
+      uploadStatusMessage.classList.remove('active'); // Hide message too
+
+      // Add 'hidden' class to all containers after a short delay to allow fade-out
+      setTimeout(() => {
+        uploadContainer.classList.add('hidden');
+        databaseContainer.classList.add('hidden');
+        chatInterface.classList.add('hidden');
+        uploadStatusMessage.classList.add('hidden');
+      }, 500); // Corresponds to the transition duration
+
+      // Show the selected container by removing 'hidden' and adding 'active'
+      setTimeout(() => { // Add a slight delay before showing the new container
+        if (selectedOption === 'upload') {
+          uploadContainer.classList.remove('hidden');
+          setTimeout(() => uploadContainer.classList.add('active'), 50);
+        } else if (selectedOption === 'database') {
+          databaseContainer.classList.remove('hidden');
+          setTimeout(() => databaseContainer.classList.add('active'), 50);
+        }
+        // Chat interface will only be shown after successful upload via uploadOntology()
+      }, 500); // Matches the hide timeout for a smoother sequential transition
+    }
+
+
+    // Connect to Databases function (from your existing code)
+    async function connectDatabases() {
+      const graphDbCheckbox = document.getElementById('graph-db');
+      const nosqlDbCheckbox = document.getElementById('nosql-db');
+      const chatBox = document.getElementById('chat-box');
+      const chatInterface = document.getElementById('chat-interface');
+      const questionInput = document.getElementById('question-input');
+      const sendBtn = document.getElementById('send-btn');
+
+
+      const payload = {};
+      if (graphDbCheckbox.checked) {
+        const graphDbUrl = document.getElementById('graph-db-url-input').value;
+        if (graphDbUrl) {
+          payload.graphDbUrl = graphDbUrl;
+        } else {
+          appendMessage(chatBox, 'bot', 'Please enter a Graph DB URL.');
+          return;
+        }
+      }
+      if (nosqlDbCheckbox.checked) {
+        const nosqlDbUrl = document.getElementById('nosql-db-url').value;
+        const nosqlDbName = document.getElementById('nosql-db-name').value;
+        const nosqlDbCollection = document.getElementById('nosql-db-collection').value;
+        if (nosqlDbUrl && nosqlDbName && nosqlDbCollection) {
+          payload.nosqlDbUrl = nosqlDbUrl;
+          payload.nosqlDbName = nosqlDbName;
+          payload.nosqlDbCollection = nosqlDbCollection;
+        } else {
+          appendMessage(chatBox, 'bot', 'Please fill in all NoSQL DB details (URL, Name, Collection).');
+          return;
+        }
+      }
+
+      if (Object.keys(payload).length === 0) {
+        appendMessage(chatBox, 'bot', 'Please select at least one database type and provide its URL(s).');
+        return;
+      }
+
+      showSpinner();
+      questionInput.disabled = true;
+      sendBtn.disabled = true;
+
+      try {
+        const response = await fetch('/connect-databases', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const data = await handleResponse(response);
+        appendMessage(chatBox, 'bot', data.message);
+
+        // Hide database container and show chat interface
+        document.getElementById('database-container').classList.remove('active');
+        setTimeout(() => {
+            document.getElementById('database-container').classList.add('hidden');
+            chatInterface.classList.remove('hidden');
+            setTimeout(() => chatInterface.classList.add('active'), 50);
+            questionInput.disabled = false;
+            sendBtn.disabled = false;
+            appendMessage(chatBox, 'bot', 'Databases connected successfully! How can I help you with the connected data?');
+        }, 500); // Allow database container to fade out
+
+      } catch (error) {
+        console.error('Connection Error:', error);
+        appendMessage(chatBox, 'bot', `Connection Error: ${error.message || 'An unknown error occurred during connection.'}`);
+        questionInput.disabled = false;
+        sendBtn.disabled = false;
+      } finally {
+        hideSpinner();
+      }
+    }
+
+    // Upload Ontology function
+    async function uploadOntology() {
+        const fileInput = document.getElementById('ontology-file');
+        const file = fileInput.files[0];
+        const uploadStatusMessage = document.getElementById('upload-status-message');
+        const chatInterface = document.getElementById('chat-interface');
+        const questionInput = document.getElementById('question-input');
+        const sendBtn = document.getElementById('send-btn');
+        const chatBox = document.getElementById('chat-box');
+
+        if (!file) {
+            appendMessage(chatBox, 'bot', 'Please select an ontology file to upload.');
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append('file', file);
+
+        showSpinner();
+        questionInput.disabled = true;
+        sendBtn.disabled = true;
+
+        try {
+            const response = await fetch('/upload-ontology', {
+                method: 'POST',
+                body: formData,
+            });
+
+            const data = await handleResponse(response);
+
+            // Display success message and activate its transition
+            uploadStatusMessage.textContent = data.message;
+            uploadStatusMessage.classList.remove('hidden'); // Ensure it's not display: none
+            setTimeout(() => uploadStatusMessage.classList.add('active'), 50); // Trigger fade-in
+
+
+            // Hide the upload container with transition
+            document.getElementById('upload-container').classList.remove('active'); // Start fade-out
+            
+            // Wait for message and upload container to transition out
+            // total wait time for message and container to clear: 0.5s (container fade) + 3s (message display)
+            setTimeout(() => {
+                uploadStatusMessage.classList.remove('active'); // Start fading out message
+                document.getElementById('upload-container').classList.add('hidden'); // Hide upload container completely after its transition
+
+                setTimeout(() => { // After message fades out (0.5s from above)
+                    uploadStatusMessage.classList.add('hidden'); // Hide message completely
+                    chatInterface.classList.remove('hidden'); // Make chatbot display block
+                    setTimeout(() => chatInterface.classList.add('active'), 50); // Trigger chat fade-in
+
+                    questionInput.disabled = false;
+                    sendBtn.disabled = false;
+                    appendMessage(chatBox, 'bot', 'Ontology loaded successfully! How can I help you with the loaded data?');
+                }, 500); // Allow status message to fade out (matches status-message transition)
+
+            }, 500); // Allow upload container to fade out (matches option-container transition)
+
+
+        } catch (error) {
+            console.error('Upload Error:', error);
+            appendMessage(chatBox, 'bot', `Upload Error: ${error.message || 'An unknown error occurred during upload.'}`);
+            // In case of upload error, ensure upload container is active and inputs enabled
+            document.getElementById('upload-container').classList.remove('hidden');
+            document.getElementById('upload-container').classList.add('active');
+            uploadStatusMessage.classList.add('hidden'); // Hide status message if error
+            questionInput.disabled = false;
+            sendBtn.disabled = false;
+        } finally {
+            hideSpinner();
+        }
+    }
+
+
+    // Send Message function (from your existing code)
+    async function sendMessage() {
+      const questionInput = document.getElementById('question-input');
+      const chatBox = document.getElementById('chat-box');
+      const sendBtn = document.getElementById('send-btn');
+      const spinner = document.getElementById('spinner');
+
+      const userMessage = questionInput.value.trim();
+      if (userMessage === '') return;
+
+      appendMessage(chatBox, 'user', userMessage);
+      questionInput.value = ''; // Clear input immediately
+
+      showSpinner();
+      questionInput.disabled = true; // Disable input while waiting for response
+      sendBtn.disabled = true; // Disable send button
+
+      try {
+        const response = await fetch('/chat', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ message: userMessage }),
+        });
+
+        const data = await handleResponse(response); // Use handleResponse for error checking
+
+        appendMessage(chatBox, 'bot', data.response);
+      } catch (error) {
+        console.error('Chat Error:', error);
+        appendMessage(chatBox, 'bot', 'Sorry, something went wrong with the server connection.');
+      } finally {
+        hideSpinner();
+        questionInput.disabled = false; // Re-enable input
+        sendBtn.disabled = false; // Re-enable send button
+        chatBox.scrollTop = chatBox.scrollHeight; // Scroll to bottom
+      }
+    }
+
+    // Helper functions for spinner visibility
+    function showSpinner() {
+      document.getElementById('spinner').style.display = 'block';
+    }
+
+    function hideSpinner() {
+      document.getElementById('spinner').style.display = 'none';
+    }
+
+    // Append a message to the chat
+    function appendMessage(chatBox, sender, text) {
+      const message = document.createElement('div');
+      message.className = `msg ${sender}`;
+
+      const icon = document.createElement('div');
+      icon.className = 'icon';
+      icon.textContent = sender === 'user' ? 'U' : 'B'; 
+
+      const bubble = document.createElement('div');
+      bubble.className = 'bubble';
+      
+      if (sender === 'bot') {
+        bubble.innerHTML = marked.parse(text); 
+      } else {
+        bubble.textContent = text;
+      }
+
+      if (sender === 'user') {
+        message.appendChild(bubble);
+        message.appendChild(icon);
+      } else {
+        message.appendChild(icon);
+        message.appendChild(bubble);
+      }
+      chatBox.appendChild(message);
+      chatBox.scrollTop = chatBox.scrollHeight; 
+    }
+
+    // Handle fetch response (used for non-chat endpoints to throw errors)
+    function handleResponse(response) {
+      if (!response.ok) {
+        return response.json().then((data) => {
+          throw new Error(data.error || 'Unknown error occurred.');
+        });
+      }
+      return response.json();
+    }
+  </script>
+</body>
+</html>
