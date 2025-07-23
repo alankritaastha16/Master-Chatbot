@@ -2,3 +2,10 @@ flask
 rdflib
 pymongo
 python-dotenv
+langchain
+sentence-transformers
+chromadb
+langchain-community
+langchain-huggingface
+langchain-openai
+SPARQLWrapper

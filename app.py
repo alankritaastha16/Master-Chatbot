@@ -4,55 +4,35 @@ import openai
 import os
 import json
 from connectors.rdf_connector import RDFConnector
+from openai import AsyncOpenAI
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Required for session handling
 connectors, tools = load_connectors()
 
 UPLOAD_FOLDER = os.path.join(os.getcwd(), 'uploads')
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-def ensure_prefixes(query):
-    prefixes = [
-        "PREFIX : <http://example.org#>",
-        "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>",
-        #"PREFIX dbo: <http://dbpedia.org/ontology>"
-    ]
-    for prefix in prefixes:
-        if prefix not in query:
-            query = prefix + "\n" + query
+uploaded_file_info = {}
 
-    # Basic validation: Ensure the query contains SELECT or ASK
-    if not any(keyword in query.upper() for keyword in ["SELECT", "ASK"]):
-        raise ValueError("Invalid SPARQL query. Must contain SELECT or ASK.")
-    return query
+def call_connector(tool_name, query):
+    """
+    Calls the appropriate connector based on the tool name and query.
+    """
+    if tool_name == "rdf_connector":
+        connector = RDFConnector()
+        return connector.query(query)
+    # Add more connectors as needed
+    return f"No connector found for tool: {tool_name}"
 
-def call_connector(tool, query):
-    global uploaded_file_info
+def read_uploaded_file(file_path):
+    """Read the content of the uploaded file."""
     try:
-        # Ensure a file has been uploaded
-        if not uploaded_file_info:
-            return "No file uploaded. Please upload a file first."
-
-        file_path = uploaded_file_info.get("path")
-        file_format = uploaded_file_info.get("format")
-
-        # Decide the connector based on file format
-        if file_format == '.ttl':  # RDF Turtle file
-            rdf_connector = RDFConnector(file_path)
-            query = ensure_prefixes(query)
-            results = rdf_connector.execute_query(query)
-            return "; ".join(results) if results else "No matches found."
-        elif file_format == '.json':  # JSON file
-            # Implement a JSON connector (example placeholder)
-            return "JSON connector not implemented yet."
-        elif file_format == '.csv':  # CSV file
-            # Implement a CSV connector (example placeholder)
-            return "CSV connector not implemented yet."
-        else:
-            return "Unsupported file format."
+        with open(file_path, 'r', encoding='utf-8') as file:
+            return file.read()
     except Exception as e:
-        return f"Error processing query: {str(e)}"
+        return f"Error reading file: {str(e)}"
 
 @app.route("/")
 def index():
@@ -60,43 +40,45 @@ def index():
 
 @app.route("/chat", methods=["POST"])
 def chat():
-    question = request.json["question"]
-    response = openai.chat.completions.create(
-        model="gpt-3.5-turbo-1106",
-        messages=[
-            {"role": "system", "content": "You are a federated chatbot that can query RDF (SPARQL) and MongoDB databases. Use the right tool for each question."},
-            {"role": "user", "content": question}
-        ],
-        tools=tools,
-        tool_choice="auto",
-        temperature=0,
-        max_tokens=200
-    )
-    choice = response.choices[0]
-    if choice.message.tool_calls:
-        tool_call = choice.message.tool_calls[0]
-        tool_name = tool_call.function.name
-        args = json.loads(tool_call.function.arguments)
-        query = args.get("sparql_query") or args.get("mongo_query")
-        result = call_connector(tool_name, query)
-        
-        # Enhance: Ask LLM to summarize results in natural language
-        nl_response = openai.chat.completions.create(
-            model="gpt-3.5-turbo-1106",
+    try:
+        question = request.json.get("question", "")
+        if not question:
+            return jsonify({"error": "No question provided"}), 400
+
+        # Check if a file has been uploaded
+        if not uploaded_file_info.get('file_path'):
+            return jsonify({"answer": "No file has been uploaded yet. Please upload a file first."}), 200
+
+        # Validate file format
+        file_path = uploaded_file_info['file_path']
+        if not file_path.endswith('.ttl'):
+            return jsonify({"answer": "The uploaded file format is not supported. Please upload a .ttl file."}), 200
+
+        # Read the uploaded file content
+        file_content = read_uploaded_file(file_path)
+        if file_content.startswith("Error"):
+            return jsonify({"answer": file_content}), 500
+
+        # Debugging logs
+        print(f"Question: {question}")
+        print(f"File content: {file_content[:100]}")  # Print first 100 characters of the file content
+
+        # Use the file content as context for the chatbot
+        response = openai.chat.completions.create(
+            model="gpt-4",
             messages=[
-                {"role": "system", "content": "You are a helpful assistant. Given a user's question and database results, answer in natural language."},
-                {"role": "user", "content": f"Question: {question}\nResults: {result}\nPlease answer in natural language."}
+                {"role": "system", "content": "You are a federated chatbot that uses the uploaded ontology file as context to answer user questions."},
+                {"role": "system", "content": f"Ontology file content:\n{file_content}"},
+                {"role": "user", "content": question}
             ],
             temperature=0.7,
-            max_tokens=150
+            max_tokens=200
         )
-        answer = nl_response.choices[0].message.content.strip()
-    else:
-        answer = choice.message.content
-
-    return jsonify({"answer": answer})
-
-uploaded_file_info = {}  # Global dictionary to store file path and format
+        answer = response.choices[0].message.content.strip()
+        return jsonify({"answer": answer})
+    except Exception as e:
+        print(f"Error in /chat endpoint: {str(e)}")  # Debugging log
+        return jsonify({"error": f"An error occurred while processing the question: {str(e)}"}), 500
 
 @app.route('/upload', methods=['POST'])
 def upload_ontology():
@@ -107,9 +89,23 @@ def upload_ontology():
     if file.filename == '':
         return jsonify({"error": "No file selected"}), 400
 
+    # Validate file format
+    if not file.filename.endswith('.ttl'):
+        return jsonify({"error": "Unsupported file format. Please upload a .ttl file."}), 400
+
     try:
-        file_path = os.path.join(UPLOAD_FOLDER, file.filename)
+        # Ensure the upload folder exists
+        if not os.path.exists(app.config['UPLOAD_FOLDER']):
+            os.makedirs(app.config['UPLOAD_FOLDER'])
+
+        # Save the file
+        file_path = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
         file.save(file_path)
+
+        # Store file info globally
+        uploaded_file_info['file_path'] = file_path
+        uploaded_file_info['file_name'] = file.filename
+
         return jsonify({"message": "File uploaded successfully!", "file_path": file_path}), 200
     except Exception as e:
         return jsonify({"error": f"Failed to upload file: {str(e)}"}), 500
